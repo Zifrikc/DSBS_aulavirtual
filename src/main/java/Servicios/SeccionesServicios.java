@@ -22,7 +22,7 @@ public class SeccionesServicios {
 
     public Secciones secciones(Secciones seccionesActualizar) {
 
-        Secciones seccionesActual = repositorio.findById(seccionesActualizar.getIdPelicula()).get();
+        Secciones seccionesActual = repositorio.findById(seccionesActualizar.getIdSecciones()).get();
 
         //peliculaActual.setIdPelicula(peliculaActualizar.getIdPelicula());
         seccionesActual.setDiseño(seccionesActualizar.getDiseño());
@@ -32,8 +32,8 @@ public class SeccionesServicios {
         seccionesActual.setMetodologiasagiles(seccionesActualizar.getMetodologiasagiles());
 
 
-        Secciones peliculaActualizado = repositorio.save(peliculaActual); // registra en base de datos
-        return peliculaActualizado;
+        Secciones SeccionActualizado = repositorio.save(seccionesActual); // registra en base de datos
+        return SeccionActualizado;
 
 
     }

@@ -9,17 +9,24 @@ import java.util.Objects;
     @Table(name="seccion")
     @NamedQueries({
             @NamedQuery(name = "seccion.findAdll", query = "SELECT p FROM Secciones p")
+            ,@NamedQuery(name = "seccion.findByIdSecciones", query="SELECT p FROM Secciones p WHERE p.idSecciones = :idSecciones")
             ,@NamedQuery(name = "seccion.findBydiseño", query="SELECT p FROM Secciones p WHERE p.diseño = :diseño")
             ,@NamedQuery(name = "seccion.findBymobile", query="SELECT p FROM Secciones p WHERE p.mobile = :mobile")
             ,@NamedQuery(name = "seccion.findByarquitectura", query="SELECT p FROM Secciones p WHERE p.arquitectura = :arquitectura")
-            ,@NamedQuery(name = "Pelicula.findByqa", query="SELECT p FROM Secciones p WHERE p.qa = :qa")
-            ,@NamedQuery(name = "Pelicula.findBymetodologiasagiles", query="SELECT p FROM Secciones p WHERE p.metodologiasagiles = :metodologiasagiles")
+            ,@NamedQuery(name = "seccion.findByqa", query="SELECT p FROM Secciones p WHERE p.qa = :qa")
+            ,@NamedQuery(name = "seccion.findBymetodologiasagiles", query="SELECT p FROM Secciones p WHERE p.metodologiasagiles = :metodologiasagiles")
 
     })
     public class Secciones implements Serializable {
 
 
         private static final long serialVersionUID = 1L;
+
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Basic(optional = false) //representa que este campo es obligatorio en base de datos
+        @Column(name ="idSecciones")
+        private Integer idSecciones;
 
         @Basic(optional = false)
         @Column(name ="diseño")
@@ -41,9 +48,20 @@ import java.util.Objects;
         public Secciones() {
 
         }
+        public void setIdPelicula(Integer idSecciones) {
+            this.idSecciones = idSecciones;
+        }
 
         public String getDiseño() {
             return diseño;
+        }
+
+        public Integer getIdSecciones() {
+            return idSecciones;
+        }
+
+        public void setIdSecciones(Integer idSecciones) {
+            this.idSecciones = idSecciones;
         }
 
         public void setDiseño(String diseño) {
@@ -82,11 +100,11 @@ import java.util.Objects;
             this.metodologiasagiles = metodologiasagiles;
         }
 
- //       public Secciones(Integer idPelicula, String nombre) {
+        public Secciones(Integer idSecciones, String nombre) {
 //
-//            this.idPelicula = idPelicula;
+          this.idSecciones = idSecciones;
 //        this.nombre = nombre;
- //       }
+       }
 
         public Secciones(String diseño, String mobile, String arquitectura, String qa, String metodologiasagiles) {
             super();
@@ -98,6 +116,12 @@ import java.util.Objects;
 
         }
 
+
+
+        @Override
+        public String toString() {
+            return "Secciones [idSecciones=" + idSecciones + "]";
+        }
 
 
 

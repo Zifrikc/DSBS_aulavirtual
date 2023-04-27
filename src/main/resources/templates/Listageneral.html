@@ -3,12 +3,12 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
-    <title>Listar Películas</title>
+    <title>Aula Virtual</title>
 </head>
 <body>
 <div align="center">
-    <h1>Peliculas</h1>
-    <a th:href="@{/peliculas/nuevo}">Create Nueva Pelicula</a>
+    <h1>Aulavirtual</h1>
+    <a th:href="@{/secciones/nuevo}">Create Nueva Seccion</a>
     <table border="4" cellpadding="10">
         <thead>
         <tr>
@@ -22,18 +22,17 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="pelicula : ${listaPeliculas}">
-            <td th:text="${pelicula.idPelicula}">Id</td>
-            <td th:text="${pelicula.nombre}">Nombre</td>
-            <td th:text="${pelicula.duracion}">Duracion</td>
-            <td th:text="${pelicula.clasificacion}">Clasificacion</td>
-            <td th:text="${pelicula.idioma}">Idioma</td>
-            <td th:text="${pelicula.genero}">Genero</td>
-            <td th:text="${pelicula.formato}">Formato</td>
-            <td th:text="${pelicula.sinopsis}">Sinopsis</td>
-            <td><a th:href="@{/peliculas/actualizar/{id}(id=${pelicula.idPelicula})}">Actualizar</a>
+        <tr th:each="seccion : ${listaSecciones}">
+            <td th:text="${seccion.idSecciones}">Id</td>
+            <td th:text="${seccion.diseño}">Diseño</td>
+            <td th:text="${seccion.mobile}">Mobile</td>
+            <td th:text="${seccion.arquitectura}">Arquitectura</td>
+            <td th:text="${seccion.qa}">Qa</td>
+            <td th:text="${seccion.metodologiasagiles}">metodologiasagiles</td>
+
+            <td><a th:href="@{/secciones/actualizar/{id}(id=${pelicula.idPelicula})}">Actualizar</a>
                 &nbsp;&nbsp;&nbsp;
-                <a th:href="@{/peliculas/eliminar/{id}(id=${pelicula.idPelicula})}">Eliminar</a>
+                <a th:href="@{/secciones/eliminar/{id}(id=${pelicula.idPelicula})}">Eliminar</a>
             </td>
         </tr>
         </tbody>

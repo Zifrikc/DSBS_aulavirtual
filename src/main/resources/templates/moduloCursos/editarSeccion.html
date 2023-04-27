@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Listar de Secciones</title>
+</head>
+<body>
+<div align="center">
+    <h1>Editar Secciones</h1>
+    <br />
+    <form action="#" th:action="@{/Secciones/guardar}" th:object="${Secciones}" method="post">
+        <table border="0" cellpadding="10">
+            <tr>
+                <td>ID  Secciones:</td>
+                <td><input type="text" th:field="*{idSecciones}" readonly="readonly" />
+                </td>
+            </tr>
+            <tr>
+                <td>Diseño:</td>
+                <td><input type="text" th:field="*{diseño}" /></td>
+            </tr>
+            <tr>
+                <td>Mobile:</td>
+                <td><input type="text" th:field="*{mobile}" /></td>
+            </tr>
+            <tr>
+                <td>Arquitectura:</td>
+                <td><input type="text" th:field="*{arquitectura}" /></td>
+            </tr>
+            <tr>
+                <td>Qa:</td>
+                <td><input type="text" th:field="*{qa}" /></td>
+            </tr>
+            <tr>
+                <td>Metodologias agiles:</td>
+                <td><input type="text" th:field="*{metodologiasagiles}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button></td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+
+</body>
+</html>
+
+

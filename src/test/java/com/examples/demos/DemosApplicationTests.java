@@ -1,11 +1,13 @@
-package com.ProjectV.AulaVirtual;
+package com.examples.demos;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AulaVirtualApplicationTests {
+class DemosApplicationTests {
 
-
+	@Test
+	void contextLoads() {
+	}
 
 }

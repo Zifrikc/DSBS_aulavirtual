@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Listar de Secciones</title>
+</head>
+<body>
+<div align="center">
+    <h1>Secciones</h1>
+    <a th:href="@{/Secciones/nuevo}">Crear un nuevo Secciones</a>
+    <table border="4" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Diseño</th>
+            <th>Mobile</th>
+            <th>Arquitectura</th>
+            <th>Qa</th>
+            <th>MetodologiasAgiles</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Secciones : ${listaSecciones}">
+            <td th:text="${Secciones.idSecciones}">Id</td>
+            <td th:text="${Secciones.diseño}">Diseño</td>
+            <td th:text="${Secciones.mobile}">Mobile</td>
+            <td th:text="${Secciones.arquitectura}">Arquitectura</td>
+            <td th:text="${Secciones.qa}">Qa</td>
+            <td th:text="${Secciones.metodologiasagiles}">metodologiasagiles</td>
+
+            <td><a th:href="@{/Secciones/actualizar/{id}(id=${Secciones.idSecciones})}">Actualizar</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{/Secciones/eliminar/{id}(id=${Secciones.idSecciones})}">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
