@@ -1,4 +1,7 @@
 package Repositorios;
 
-public interface SeccionesRepository {
+import Modelo.Secciones;
+import org.springframework.data.repository.CrudRepository;
+
+public interface SeccionesRepository extends CrudRepository<Secciones, Integer> {
 }
